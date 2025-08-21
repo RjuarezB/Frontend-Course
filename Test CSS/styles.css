@@ -1,0 +1,36 @@
+
+button {
+    background-color:  rgb(76, 144, 172);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 400ms;
+    animation: pointdown 500ms infinite alternate-reverse;
+}
+button:hover {
+    opacity: 50%;
+}
+
+p::before {
+    content: "Read this: ";
+    font-weight: bold;
+
+}
+
+p::after {
+    content: ".";
+}
+p {
+    animation: pointdown 500ms infinite alternate-reverse;
+}
+
+@keyframes pointdown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(16px);
+    }
+}

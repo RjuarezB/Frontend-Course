@@ -1,0 +1,128 @@
+/* ==================== RESET BÁSICO ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== SELECTORES ==================== */
+/* Por etiqueta */
+p { color: red; }
+/* Por clase */
+.title { font-size: 20px; }
+/* Por id */
+#main { padding: 20px; }
+/* Descendiente */
+nav ul li { list-style: none; }
+/* Pseudo-clases */
+a:hover { color: blue; }
+input:focus { border: 2px solid green; }
+/* Pseudo-elementos */
+p::first-letter { font-size: 2em; color: red; }
+
+/* ==================== UNIDADES ==================== */
+/* px → fijo, % → relativo al contenedor, em → relativo al padre, rem → relativo a html
+   vw/vh → relativo a viewport, fr → fracción en grid */
+
+/* ==================== BOX MODEL ==================== */
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+  /* Con box-sizing: border-box; width incluye padding + border */
+}
+
+/* ==================== POSITION ==================== */
+.static { position: static; }   /* por defecto */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; top: 0; }
+
+/* ==================== FLEXBOX ==================== */
+.flex-container {
+  display: flex;
+  justify-content: center; /* eje X */
+  align-items: center;     /* eje Y */
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ==================== GRID ==================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ==================== TIPOGRAFÍA ==================== */
+h1 { font-size: 2rem; font-weight: bold; }
+h2 { font-size: 1.5rem; }
+p { font-size: 1rem; line-height: 1.5; }
+
+/* ==================== BACKGROUNDS Y COLORES ==================== */
+.bg-primary { background-color: #1E40AF; }
+.bg-secondary { background-color: #3B82F6; }
+.text-white { color: #fff; }
+.text-gray { color: #666; }
+
+/* ==================== BORDES Y SOMBRAS ==================== */
+.rounded { border-radius: 8px; }
+.shadow { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+/* ==================== BOTONES ==================== */
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #1E40AF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.button:hover {
+  background-color: #3B82F6;
+  transform: scale(1.05);
+}
+
+/* ==================== ANIMACIONES ==================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-fade { animation: fadeIn 1s ease-in-out; }
+.animate-bounce { animation: bounce 1s infinite; }
+
+/* ==================== TRANSICIONES ==================== */
+.transition {
+  transition: all 0.3s ease;
+}
+
+/* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
+@media (max-width: 1024px) {
+  .grid-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-container { grid-template-columns: 1fr; }
+  .flex-container { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  p { font-size: 0.9rem; }
+}
+
+/* ==================== UTILIDADES ==================== */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.m-2 { margin: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.p-4 { padding: 1rem; }
